@@ -12,7 +12,6 @@ def decrypt(buff, master_key):
     try:
         return AES.new(CryptUnprotectData(master_key, None, None, None, 0)[1], AES.MODE_GCM, buff[3:15]).decrypt(buff[15:])[:-16].decode()
     except Exception as e:
-        print(e)
         return "An error has occured.\n" + e
 
 askUser = input("[1] Decrypt Custom Token\n[2] Decrypt token from discord files\n\n> ")
