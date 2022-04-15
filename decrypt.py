@@ -43,9 +43,6 @@ elif "2" in askUser:
             i.replace("\\", "")
         elif i not in cleaned:
             cleaned.append(i)
-    if len(cleaned) == 1:
-        print(decrypt(b64decode(cleaned[0].split('dQw4w9WgXcQ:')[1]), b64decode(key)[5:]))
-    else:
-        for token in cleaned:
-            print(decrypt(b64decode(token.split('dQw4w9WgXcQ:')[1]), b64decode(key)[5:]))
+    for token in cleaned:
+        print(decrypt(b64decode(token.split('dQw4w9WgXcQ:')[1]), b64decode(key)[5:]))
 
